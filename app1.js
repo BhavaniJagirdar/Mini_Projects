@@ -70,6 +70,18 @@ const checkWinner = () =>{
             }
         }
     }
+    let isTie = true;
+    boxes.forEach((box) => {
+        if (box.innerText === "") {
+            isTie = false;
+        }
+    });
+
+    if (isTie) {
+        msg.innerText = "It's a Tie!";
+        msgContainer.classList.remove("hide");
+        disableBoxes();
+    }
 }
 
 newGameBtn.addEventListener("click",resetGame);
